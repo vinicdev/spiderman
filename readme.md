@@ -1,6 +1,6 @@
 # Spider-man PS4
 
-📜 Este é um case do curso online FrontPUSH 2.0 (https://frontpush.com.br/) 
+📜 Este é um case do curso online FrontPUSH 3.0 (https://frontpush.com.br/) 
 com o objetivo de ensinar sobre CSS e animações utilizando a biblioteca GSAP 
 (https://greensock.com/)
 
