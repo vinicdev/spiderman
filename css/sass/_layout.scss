@@ -32,6 +32,12 @@ $gutter: 32px;
     }
   } 
   
+  @else if $device == k {
+    // For resolutions between 1440px and 1268px
+    @media screen and (max-width: 1050px) and (min-width: 961px) {
+      @content;
+    }
+  } 
   
   @else if $device == m {
     // For resolutions between 1268px and 620px
@@ -40,7 +46,6 @@ $gutter: 32px;
     }
   } 
   
-  
   @else if $device == s {
     // For resolutions less than 960px
     @media screen and (max-width: $container-m) {
@@ -48,14 +53,6 @@ $gutter: 32px;
     }
   } 
 
-  @else if $device == k {
-    // Para resoluções entre 1200px e 960px
-    @media screen and (max-width: 1200px) and (min-width: 960px) {
-      @content;
-    }
-  } 
-  
-  
   @else if $device == xs {
     // For resolutions less than 340px
     @media screen and (max-width: $container-xs) {
@@ -340,31 +337,55 @@ $gutter: 32px;
 
 .hero{
   max-width: 1280px;
-  margin: 0 auto;
-
-  padding: 24px 16px;
-
   height: 100vh;
+  margin: 0 auto;
+  padding: 24px 16px;
 }
 
-.text-spider-hero{
-  font-size: 200px;
-  display: inline;
-
+.text-spider{
   position: absolute;
-  top: 30%;
+  top: 32%;
   left: 50%;
 
   transform: translate(-50%, -50%);
+  z-index: -1;
+
+  @include responsive(s){
+    top: 21%;
+    left: 50%;
+  }
+}
+
+.text-spider-hero{
+  white-space: nowrap;
+
+  @include responsive(k){
+    font-size: 140px !important;
+  }
+}
+
+.div-spider {
+  position: absolute;
+  top: 16%;
+  left: 0%;
+
+  //transform: translate(-50%, -50%);
+
+  @include responsive(s){
+    top: 18%;
+    left: 0%;
+  }
 }
 
 .spider-hero{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 100;
+  display: block;
 
-  transform: translate(-50%, -50%) scale(1.5);
+  transform: scale(1.4);
+  transition: 1s ease;
+
+  @include responsive(s){
+    transform: scale(2.3);
+  }
 }
 
 .nav-link{
@@ -378,4 +399,88 @@ $gutter: 32px;
   &:hover{
     opacity: .4;
   }
+}
+
+.cta{
+  position: absolute;
+  left: 20%;
+  top: 60%;
+  
+  z-index: 150;
+
+  @include responsive(s){
+    top: 65%
+  }
+
+  @include responsive(m){
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.div-play {
+  position: absolute;
+  top: 50%;
+  right: 30%;
+  z-index: 150;
+
+  @include responsive(s){
+    right: 40%;
+  }  
+}
+
+.cta-play{
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+  background: rgba(17, 25, 41, 0.50);
+
+  border: 2px solid #111929;
+  backdrop-filter: blur(6px);
+
+  position: relative;
+  transition: .7s ease;
+
+  &::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 32px;
+    height: 32px;
+    background-image: url('../../svg/icon-play.svg');
+    background-size: cover;
+    transform: translate(-50%, -50%) ;
+
+    z-index: -1;
+
+  }
+
+  &:hover{
+    backdrop-filter: blur(2px);
+
+    transform: scale(1.2);
+  }
+
+  h6{
+    white-space: nowrap;
+    
+    position: absolute;
+    top: 50%;
+    left: 140%;
+
+    transform: translate(-50%, -50%);
+
+    @include responsive(s){
+      left: 175%;
+    }
+  }
+
+  @include responsive(s){
+    width: 80px;
+    height: 80px;
+  }  
 }

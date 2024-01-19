@@ -507,26 +507,55 @@
 
 .hero {
   max-width: 1280px;
+  height: 100vh;
   margin: 0 auto;
   padding: 24px 16px;
-  height: 100vh;
+}
+
+.text-spider {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+@media screen and (max-width: 960px) {
+  .text-spider {
+    top: 21%;
+    left: 50%;
+  }
 }
 
 .text-spider-hero {
-  font-size: 200px;
-  display: inline;
+  white-space: nowrap;
+}
+@media screen and (max-width: 1050px) and (min-width: 961px) {
+  .text-spider-hero {
+    font-size: 140px !important;
+  }
+}
+
+.div-spider {
   position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 16%;
+  left: 0%;
+}
+@media screen and (max-width: 960px) {
+  .div-spider {
+    top: 18%;
+    left: 0%;
+  }
 }
 
 .spider-hero {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 100;
-  transform: translate(-50%, -50%) scale(1.5);
+  display: block;
+  transform: scale(1.4);
+  transition: 1s ease;
+}
+@media screen and (max-width: 960px) {
+  .spider-hero {
+    transform: scale(2.3);
+  }
 }
 
 .nav-link {
@@ -538,6 +567,84 @@
 }
 .nav-link:hover {
   opacity: 0.4;
+}
+
+.cta {
+  position: absolute;
+  left: 20%;
+  top: 60%;
+  z-index: 150;
+}
+@media screen and (max-width: 960px) {
+  .cta {
+    top: 65%;
+  }
+}
+@media screen and (max-width: 1268px) and (min-width: 620px) {
+  .cta {
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.div-play {
+  position: absolute;
+  top: 50%;
+  right: 30%;
+  z-index: 150;
+}
+@media screen and (max-width: 960px) {
+  .div-play {
+    right: 40%;
+  }
+}
+
+.cta-play {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(17, 25, 41, 0.5);
+  border: 2px solid #111929;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  position: relative;
+  transition: 0.7s ease;
+}
+.cta-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  background-image: url("../../svg/icon-play.svg");
+  background-size: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.cta-play:hover {
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  transform: scale(1.2);
+}
+.cta-play h6 {
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 140%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 960px) {
+  .cta-play h6 {
+    left: 175%;
+  }
+}
+@media screen and (max-width: 960px) {
+  .cta-play {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .s-0 {
@@ -1618,6 +1725,19 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+}
+.nav-menu li {
+  margin: 8px 16px;
+}
+@media screen and (max-width: 960px) {
+  .nav-menu {
+    display: none;
+  }
 }
 
 .icon {
