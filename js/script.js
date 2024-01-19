@@ -5,33 +5,26 @@ const points = document.querySelectorAll('.space-point');
 const style_points = document.querySelectorAll('.point');
 const images = document.querySelectorAll('.img-slider');
 
+// points.forEach((item, index) => {
+//   item.addEventListener('click', () => {
 
-points.forEach((item, index) => {
+//     // Zerar todas as images
+//     images[0].style.opacity = "0";
+//     images[1].style.opacity = "0";
+//     images[2].style.opacity = "0";
+//     images[3].style.opacity = "0";
 
-  item.addEventListener('click', () => {
+//     images[index].style.opacity = "1";
 
-    // Zerar todas as images
-    images[0].style.opacity = "0";
-    images[1].style.opacity = "0";
-    images[2].style.opacity = "0";
-    images[3].style.opacity = "0";
+//     style_points[0].classList.remove("active-point");
+//     style_points[1].classList.remove("active-point");
+//     style_points[2].classList.remove("active-point");
+//     style_points[3].classList.remove("active-point");
 
-    images[index].style.opacity = "1";
+//     style_points[index].classList.add("active-point");
+//   })
+// })
 
-    style_points[0].classList.remove("active-point");
-    style_points[1].classList.remove("active-point");
-    style_points[2].classList.remove("active-point");
-    style_points[3].classList.remove("active-point");
-
-    style_points[index].classList.add("active-point");
-
-  })
-
-})
-
-
-
-/*
 let i = 0;
 
 points.forEach((item, index) => {
@@ -48,12 +41,12 @@ points.forEach((item, index) => {
     images[index].style.opacity = "1";
 
 
-    points[0].classList.remove("active-point");
-    points[1].classList.remove("active-point");
-    points[2].classList.remove("active-point");
-    points[3].classList.remove("active-point");
+    style_points[0].classList.remove("active-point");
+    style_points[1].classList.remove("active-point");
+    style_points[2].classList.remove("active-point");
+    style_points[3].classList.remove("active-point");
 
-    points[index].classList.add("active-point");
+    style_points[index].classList.add("active-point");
   })
 })
 
@@ -70,29 +63,21 @@ function changeBackground(){
   // Aparece somente aquela que clicou
   images[i].style.opacity = "1";
 
-  points[0].classList.remove("active-point");
-  points[1].classList.remove("active-point");
-  points[2].classList.remove("active-point");
-  points[3].classList.remove("active-point");
+  style_points[0].classList.remove("active-point");
+  style_points[1].classList.remove("active-point");
+  style_points[2].classList.remove("active-point");
+  style_points[3].classList.remove("active-point");
 
-  points[i].classList.add("active-point");
+  style_points[i].classList.add("active-point");
 
   i++;
 
   if(i == 4) i = 0;
-
-  //console.log('trocou de bg');
 }
-
-//console.log(points);
-//console.log(images[0]);
-/*
 
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
-
-
   var tl1 = gsap.timeline();
     
   tl1
@@ -130,4 +115,3 @@ document.addEventListener("DOMContentLoaded", () => {
 ScrollTrigger.addEventListener("scrollStart", () => {
   ScrollTrigger.refresh();
 });
-*/

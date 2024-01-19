@@ -335,6 +335,67 @@ $gutter: 32px;
   }
 }
 
+.img-slider{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%);
+  transition: .7s ease;
+}
+
+.screen-loading{
+  width: 100%;
+  height: 100vh;
+  background-color: $black-dark;
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  pointer-events: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loader-spider{
+  position: relative;
+  //border: 1px solid pink;
+
+  &::after{
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    backdrop-filter: blur(0px);
+
+    width: 100%;
+    height: 300%;
+    //border: 1px solid green;
+
+    background: linear-gradient(180deg, rgba(4, 12, 27, 0) 0%, #040C1B 60%);
+    
+    animation: loader-spider 3s ease forwards;
+  }
+}
+
+@keyframes loader-spider{
+  0%{
+    top: -150%;
+    left: 0;
+    backdrop-filter: blur(16px);
+  }
+  100%{
+    top: 00%;
+    left: 0%;
+    backdrop-filter: blur(0px);
+  }
+}
+
 .hero{
   max-width: 1280px;
   height: 100vh;
@@ -409,13 +470,16 @@ $gutter: 32px;
   z-index: 150;
 
   @include responsive(s){
-    top: 65%
+    display: flex;
+    transform: translate(-50%, -50%) !important;
+    left: 50%;
+    top: 80%
   }
 
   @include responsive(m){
     left: 50%;
     top: 70%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) !important;
   }
 }
 
@@ -484,3 +548,46 @@ $gutter: 32px;
     height: 80px;
   }  
 }
+
+.slider-points{
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  
+  transform: translate(-50%, -50%) !important;
+
+  @include responsive(s){
+    display: flex;
+    left: 50%;
+    top: 61%;
+
+    width: 28%;
+
+  }  
+}
+
+.space-point{
+  padding: 12px;
+  margin: 24px 0;
+
+  cursor: pointer;
+}
+
+.point{
+  width: 8px;
+  height: 8px;
+  
+  border-radius: 50%;
+  z-index: 150;
+  background-color: rgba(255,255,255, .3);
+
+  transition: .7s ease;
+}
+
+.active-point{
+  background-color: rgba(255,255,255, .9);
+  transform: scale(2.0) !important;
+
+  transition: .7s ease;
+}
+
